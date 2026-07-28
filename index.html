@@ -1,26 +1,27 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0a1713" />
-  <title>Casa del Jefe — Casino Training Academy</title>
-  <meta name="description" content="Enter Casa del Jefe for Blackjack and Jacks or Better training, complete strategy references, and the El Jefe Challenges.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Casa del Jefe — Casino Training Academy">
-  <meta property="og:description" content="Train. Master. Punish. Blackjack and Jacks or Better training at Casa del Jefe.">
-  <meta property="og:url" content="https://jliese916.github.io/">
-  <meta property="og:image" content="https://jliese916.github.io/og-casa-del-jefe.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Casa del Jefe — Casino Training Academy crest">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Casa del Jefe — Casino Training Academy">
-  <meta name="twitter:description" content="Train. Master. Punish. Blackjack and Jacks or Better training at Casa del Jefe.">
-  <meta name="twitter:image" content="https://jliese916.github.io/og-casa-del-jefe.png">
-  <link rel="icon" type="image/png" href="./favicon-64.png">
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#0a1713" name="theme-color"/>
+<title>Casa del Jefe — Casino Training Academy</title>
+<meta content="Enter Casa del Jefe for Blackjack and Jacks or Better training, complete strategy references, and the El Jefe Challenges." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="Casa del Jefe — Casino Training Academy" property="og:title"/>
+<meta content="Train. Master. Punish. Blackjack and Jacks or Better training at Casa del Jefe." property="og:description"/>
+<meta content="https://jliese916.github.io/" property="og:url"/>
+<meta content="https://jliese916.github.io/og-casa-del-jefe.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Casa del Jefe — Casino Training Academy crest" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Casa del Jefe — Casino Training Academy" name="twitter:title"/>
+<meta content="Train. Master. Punish. Blackjack and Jacks or Better training at Casa del Jefe." name="twitter:description"/>
+<meta content="https://jliese916.github.io/og-casa-del-jefe.png" name="twitter:image"/>
+<link href="./favicon-64.png" rel="icon" type="image/png"/>
+<link href="./apple-touch-icon.png" rel="apple-touch-icon"/>
+<style>
     :root {
       --ink: #f8f1df;
       --muted: #cbbf9f;
@@ -432,98 +433,101 @@
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto !important; transition: none !important; }
     }
-  </style>
+  
+
+    /* Casa crest mounted on the academy castle. */
+    .castle .keep{overflow:visible}
+    .castle-crest{
+      position:absolute;left:50%;top:19px;z-index:4;width:62px;height:62px;
+      transform:translateX(-50%);filter:drop-shadow(0 5px 8px rgba(0,0,0,.42));
+    }
+    @media(max-width:640px){.castle-crest{top:24px;width:52px;height:52px}}
+</style>
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <div class="shell">
-        <div class="crest"><img src="./jefe-crest.svg" alt="Casa del Jefe crest"></div>
-        <div class="eyebrow">Welcome to</div>
-        <h1>Casa del Jefe</h1>
-        <div class="subtitle">Casino Training Academy</div>
-        <p class="intro">
+<main>
+<section class="hero">
+<div class="shell">
+<div class="crest"><img alt="Casa del Jefe crest" src="./jefe-crest.svg"/></div>
+<div class="eyebrow">Welcome to</div>
+<h1>Casa del Jefe</h1>
+<div class="subtitle">Casino Training Academy</div>
+<p class="intro">
           Enter the academy, sharpen your decisions, and train until the right play becomes automatic.
           Choose a game below to begin.
         </p>
-        <div class="motto">Train. Master. Punish.</div>
-
-        <div class="castle" aria-hidden="true">
-          <span class="flag-pole club"><span class="flag club">♣</span></span>
-          <span class="flag-pole spade"><span class="flag spade">♠</span></span>
-          <span class="flag-pole diamond"><span class="flag diamond">♦</span></span>
-          <span class="flag-pole heart"><span class="flag heart">♥</span></span>
-          <div class="base"></div>
-          <div class="tower left"><span class="window one"></span><span class="window two"></span></div>
-          <div class="keep"><span class="window one"></span><span class="window two"></span><span class="door"></span></div>
-          <div class="tower right"><span class="window one"></span><span class="window two"></span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="academy">
-      <div class="shell">
-        <div class="section-head">
-          <h2>Choose Your Training Hall</h2>
-          <p>Two games are open. More rooms may be added as the academy grows.</p>
-        </div>
-
-        <div class="trainer-grid">
-          <article class="trainer-card">
-            <div class="card-hand blackjack-hand" aria-hidden="true">
-              <span class="mini-card spade">A♠</span>
-              <span class="mini-card heart">J♥</span>
-            </div>
-            <div class="label">The Blackjack Salon</div>
-            <h3>Blackjack Trainer</h3>
-            <p>
+<div class="motto">Train. Master. Punish.</div>
+<div aria-hidden="true" class="castle">
+<span class="flag-pole club"><span class="flag club">♣</span></span>
+<span class="flag-pole spade"><span class="flag spade">♠</span></span>
+<span class="flag-pole diamond"><span class="flag diamond">♦</span></span>
+<span class="flag-pole heart"><span class="flag heart">♥</span></span>
+<div class="base"></div>
+<div class="tower left"><span class="window one"></span><span class="window two"></span></div>
+<div class="keep"><img alt="" aria-hidden="true" class="castle-crest" src="./jefe-crest.svg"/><span class="window one"></span><span class="window two"></span><span class="door"></span></div>
+<div class="tower right"><span class="window one"></span><span class="window two"></span></div>
+</div>
+</div>
+</section>
+<section class="academy">
+<div class="shell">
+<div class="section-head">
+<h2>Choose Your Training Hall</h2>
+<p>Two games are open. More rooms may be added as the academy grows.</p>
+</div>
+<div class="trainer-grid">
+<article class="trainer-card">
+<div aria-hidden="true" class="card-hand blackjack-hand">
+<span class="mini-card spade">A♠</span>
+<span class="mini-card heart">J♥</span>
+</div>
+<div class="label">The Blackjack Salon</div>
+<h3>Blackjack Trainer</h3>
+<p>
               Practice basic strategy through full hands, focused training, lookups, and mistake review.
               Take the El Jefe Challenge when you feel prepared.
             </p>
-            <div class="features" aria-label="Blackjack trainer features">
-              <span class="feature">Play</span>
-              <span class="feature">Train</span>
-              <span class="feature">Look Up</span>
-              <span class="feature">Basic Strategy Table</span>
-              <span class="feature">Challenge</span>
-            </div>
-            <a class="enter" href="https://jliese916.github.io/BlackJackTrainer/">
-              <span>Enter Blackjack Trainer</span><span aria-hidden="true">→</span>
-            </a>
-          </article>
-
-          <article class="trainer-card">
-            <div class="card-hand poker-hand" aria-hidden="true">
-              <span class="mini-card heart">10♥</span>
-              <span class="mini-card heart">J♥</span>
-              <span class="mini-card heart">Q♥</span>
-              <span class="mini-card heart">K♥</span>
-              <span class="mini-card club">4♣</span>
-            </div>
-            <div class="label">The Video Poker Hall</div>
-            <h3>Jacks or Better Trainer</h3>
-            <p>
+<div aria-label="Blackjack trainer features" class="features">
+<span class="feature">Play</span>
+<span class="feature">Train</span>
+<span class="feature">Look Up</span>
+<span class="feature">Basic Strategy Table</span>
+<span class="feature">Challenge</span>
+</div>
+<a class="enter" href="https://jliese916.github.io/BlackJackTrainer/">
+<span>Enter Blackjack Trainer</span><span aria-hidden="true">→</span>
+</a>
+</article>
+<article class="trainer-card">
+<div aria-hidden="true" class="card-hand poker-hand">
+<span class="mini-card heart">10♥</span>
+<span class="mini-card heart">J♥</span>
+<span class="mini-card heart">Q♥</span>
+<span class="mini-card heart">K♥</span>
+<span class="mini-card club">4♣</span>
+</div>
+<div class="label">The Video Poker Hall</div>
+<h3>Jacks or Better Trainer</h3>
+<p>
               Master full-pay 9/6 Jacks or Better with optimal holds, session review,
               a complete decision ladder, and the El Jefe Challenge.
             </p>
-            <div class="features" aria-label="Jacks or Better trainer features">
-              <span class="feature">Play</span>
-              <span class="feature">Train</span>
-              <span class="feature">Look Up</span>
-              <span class="feature">Decision Ladder</span>
-              <span class="feature">Challenge</span>
-            </div>
-            <a class="enter" href="https://jliese916.github.io/JacksOrBetter/">
-              <span>Enter Jacks or Better</span><span aria-hidden="true">→</span>
-            </a>
-          </article>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer>
+<div aria-label="Jacks or Better trainer features" class="features">
+<span class="feature">Play</span>
+<span class="feature">Train</span>
+<span class="feature">Look Up</span>
+<span class="feature">Decision Ladder</span>
+<span class="feature">Challenge</span>
+</div>
+<a class="enter" href="https://jliese916.github.io/JacksOrBetter/">
+<span>Enter Jacks or Better</span><span aria-hidden="true">→</span>
+</a>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer>
     Casa del Jefe · Built to punish the greedy casinos.
   </footer>
 </body>
