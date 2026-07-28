@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a1713" />
   <title>Casa del Jefe — Casino Training Academy</title>
+  <meta name="description" content="Enter Casa del Jefe for Blackjack and Jacks or Better training, complete strategy references, and the El Jefe Challenges.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Casa del Jefe — Casino Training Academy">
+  <meta property="og:description" content="Train. Master. Punish. Blackjack and Jacks or Better training at Casa del Jefe.">
+  <meta property="og:url" content="https://jliese916.github.io/">
+  <meta property="og:image" content="https://jliese916.github.io/og-casa-del-jefe.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Casa del Jefe — Casino Training Academy crest">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Casa del Jefe — Casino Training Academy">
+  <meta name="twitter:description" content="Train. Master. Punish. Blackjack and Jacks or Better training at Casa del Jefe.">
+  <meta name="twitter:image" content="https://jliese916.github.io/og-casa-del-jefe.png">
+  <link rel="icon" type="image/png" href="./favicon-64.png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
   <style>
     :root {
       --ink: #f8f1df;
@@ -62,25 +77,20 @@
     }
 
     .crest {
-      width: 92px;
-      height: 92px;
-      margin: 0 auto 22px;
-      border-radius: 24px;
-      border: 1px solid rgba(241,217,146,.6);
-      display: grid;
-      place-items: center;
-      color: var(--gold-soft);
-      background: linear-gradient(145deg, rgba(216,181,100,.22), rgba(13,58,45,.55));
-      box-shadow: 0 14px 40px rgba(0,0,0,.35), inset 0 0 24px rgba(241,217,146,.08);
-      transform: rotate(45deg);
+      width: 116px;
+      height: 116px;
+      margin: 0 auto 20px;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      transform: none;
     }
 
-    .crest span {
-      transform: rotate(-45deg);
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 700;
-      font-size: 2rem;
-      letter-spacing: -2px;
+    .crest img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 14px 24px rgba(0,0,0,.42));
     }
 
     .eyebrow {
@@ -115,6 +125,8 @@
       font-size: 1.05rem;
       line-height: 1.7;
     }
+
+    .motto { margin-top: 15px; color: var(--gold-soft); font-family: Georgia, "Times New Roman", serif; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 
     .castle {
       width: min(720px, 95vw);
@@ -388,7 +400,9 @@
       .trainer-card { min-height: 350px; padding: 28px 30px 30px; }
 
       /* Keep the full castle treatment on mobile, including all four suit flags. */
-      .castle {
+      .motto { margin-top: 15px; color: var(--gold-soft); font-family: Georgia, "Times New Roman", serif; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+
+    .castle {
         transform: scale(.82);
         transform-origin: center bottom;
         margin-left: -10%;
@@ -424,7 +438,7 @@
   <main>
     <section class="hero">
       <div class="shell">
-        <div class="crest" aria-hidden="true"><span>CJ</span></div>
+        <div class="crest"><img src="./jefe-crest.svg" alt="Casa del Jefe crest"></div>
         <div class="eyebrow">Welcome to</div>
         <h1>Casa del Jefe</h1>
         <div class="subtitle">Casino Training Academy</div>
@@ -432,6 +446,7 @@
           Enter the academy, sharpen your decisions, and train until the right play becomes automatic.
           Choose a game below to begin.
         </p>
+        <div class="motto">Train. Master. Punish.</div>
 
         <div class="castle" aria-hidden="true">
           <span class="flag-pole club"><span class="flag club">♣</span></span>
@@ -509,7 +524,7 @@
   </main>
 
   <footer>
-    Casa del Jefe · Built to dominate the greedy casinos.
+    Casa del Jefe · Built to punish the greedy casinos.
   </footer>
 </body>
 </html>
