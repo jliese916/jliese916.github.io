@@ -215,6 +215,7 @@
       box-shadow: 0 0 8px rgba(241,217,146,.45);
     }
     .flag {
+      --flag-fill: linear-gradient(135deg, #252a29, #060908);
       position: absolute;
       top: 5px;
       left: 2px;
@@ -223,20 +224,40 @@
       display: grid;
       place-items: center;
       clip-path: polygon(0 0, 100% 8%, 82% 50%, 100% 92%, 0 100%);
+      background: var(--flag-fill);
       color: #fff8e7;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.15rem;
       font-weight: 800;
       line-height: 1;
-      filter:
-        drop-shadow(0 0 1px rgba(255,255,255,.98))
-        drop-shadow(0 0 1px rgba(255,255,255,.78))
-        drop-shadow(0 4px 5px rgba(0,0,0,.42));
+      filter: drop-shadow(0 4px 5px rgba(0,0,0,.42));
+      isolation: isolate;
     }
-    .flag.spade { background: linear-gradient(135deg, #252a29, #060908); }
-    .flag.heart { background: linear-gradient(135deg, #ba3341, #68131e); }
-    .flag.diamond { background: linear-gradient(135deg, #2879d8, #123b86); }
-    .flag.club { background: linear-gradient(135deg, #278d62, #0d4d34); }
+    .flag::before,
+    .flag::after {
+      content: "";
+      position: absolute;
+      clip-path: inherit;
+      pointer-events: none;
+    }
+    .flag::before {
+      inset: 2px;
+      background: #fff8e7;
+      z-index: 1;
+    }
+    .flag::after {
+      inset: 3.35px;
+      background: var(--flag-fill);
+      z-index: 2;
+    }
+    .flag > span {
+      position: relative;
+      z-index: 3;
+    }
+    .flag.spade { --flag-fill: linear-gradient(135deg, #252a29, #060908); }
+    .flag.heart { --flag-fill: linear-gradient(135deg, #ba3341, #68131e); }
+    .flag.diamond { --flag-fill: linear-gradient(135deg, #2879d8, #123b86); }
+    .flag.club { --flag-fill: linear-gradient(135deg, #278d62, #0d4d34); }
     .flag-pole.club { left: 15%; }
     .flag-pole.spade { left: 36%; bottom: 137px; }
     .flag-pole.diamond { right: 36%; bottom: 137px; }
@@ -322,6 +343,9 @@
 
     .trainer-card {
       position: relative;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
       padding: 30px;
       min-height: 390px;
       border: 1px solid var(--line);
@@ -341,6 +365,13 @@
       border-color: rgba(241,217,146,.62);
       box-shadow: 0 34px 90px rgba(0,0,0,.52);
     }
+
+    .trainer-card:focus-visible {
+      outline: 3px solid var(--gold-soft);
+      outline-offset: 5px;
+      border-color: rgba(241,217,146,.75);
+    }
+    .trainer-card:active { transform: translateY(-2px) scale(.995); }
 
     .trainer-card::after {
       content: "";
@@ -386,24 +417,23 @@
       font-weight: 700;
     }
 
-    .enter {
+    .room-enter {
       margin-top: auto;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      width: 100%;
-      color: #132019;
-      text-decoration: none;
+      gap: 14px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(216,181,100,.18);
+      color: var(--gold-soft);
       font-weight: 900;
-      padding: 15px 18px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-      box-shadow: 0 14px 28px rgba(216,181,100,.18);
-      transition: filter .2s ease, transform .2s ease;
+      letter-spacing: .02em;
     }
-    .enter:hover { filter: brightness(1.06); transform: translateY(-1px); }
-    .enter span:last-child { font-size: 1.2rem; }
+    .room-enter span:last-child {
+      font-size: 1.25rem;
+      transition: transform .2s ease;
+    }
+    .trainer-card:hover .room-enter span:last-child { transform: translateX(4px); }
 
 
 
@@ -460,10 +490,10 @@
     /* Casa crest mounted on the academy castle. */
     .castle .keep{overflow:visible}
     .castle-crest{
-      position:absolute;left:50%;top:19px;z-index:4;width:62px;height:62px;
+      position:absolute;left:50%;top:14px;z-index:4;width:50px;height:50px;
       transform:translateX(-50%);filter:drop-shadow(0 5px 8px rgba(0,0,0,.42));
     }
-    @media(max-width:640px){.castle-crest{top:24px;width:52px;height:52px}}
+    @media(max-width:640px){.castle-crest{top:17px;width:44px;height:44px}}
 </style>
 </head>
 <body>
@@ -480,10 +510,10 @@
         </p>
 <div class="motto">Train. Master. Punish.</div>
 <div aria-hidden="true" class="castle">
-<span class="flag-pole club"><span class="flag club">♣</span></span>
-<span class="flag-pole spade"><span class="flag spade">♠</span></span>
-<span class="flag-pole diamond"><span class="flag diamond">♦</span></span>
-<span class="flag-pole heart"><span class="flag heart">♥</span></span>
+<span class="flag-pole club"><span class="flag club"><span>♣</span></span></span>
+<span class="flag-pole spade"><span class="flag spade"><span>♠</span></span></span>
+<span class="flag-pole diamond"><span class="flag diamond"><span>♦</span></span></span>
+<span class="flag-pole heart"><span class="flag heart"><span>♥</span></span></span>
 <div class="base"></div>
 <div class="tower left"><span class="window one"></span><span class="window two"></span></div>
 <div class="keep"><img alt="" aria-hidden="true" class="castle-crest" src="./jefe-crest.svg"/><span class="window one"></span><span class="window two"></span><span class="door"></span></div>
@@ -498,13 +528,13 @@
 <p>Two games are open. More rooms may be added as the academy grows.</p>
 </div>
 <div class="trainer-grid">
-<article class="trainer-card">
+<a aria-label="Open Blackjack Salon" class="trainer-card" href="https://jliese916.github.io/BlackJackTrainer/">
 <div aria-hidden="true" class="card-hand blackjack-hand">
 <span class="preview-card suit-spades"><span class="card-rank">A</span><span class="card-suit card-suit-top">♠</span><span class="card-suit card-suit-bottom">♠</span></span>
 <span class="preview-card suit-hearts"><span class="card-rank">J</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
 </div>
-<div class="label">The Blackjack Salon</div>
-<h3>Blackjack Trainer</h3>
+<h3>The Blackjack Salon</h3>
+<div class="label">Blackjack Trainer</div>
 <p>
               Practice basic strategy through full hands, focused training, lookups, and mistake review.
               Take the El Jefe Challenge when you feel prepared.
@@ -516,11 +546,9 @@
 <span class="feature">Basic Strategy Table</span>
 <span class="feature">Challenge</span>
 </div>
-<a class="enter" href="https://jliese916.github.io/BlackJackTrainer/">
-<span>Enter Blackjack Trainer</span><span aria-hidden="true">→</span>
+<div class="room-enter"><span>Enter Blackjack Salon</span><span aria-hidden="true">→</span></div>
 </a>
-</article>
-<article class="trainer-card">
+<a aria-label="Open Video Poker Hall" class="trainer-card" href="https://jliese916.github.io/JacksOrBetter/">
 <div aria-hidden="true" class="card-hand poker-hand">
 <span class="preview-card suit-hearts"><span class="card-rank">10</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
 <span class="preview-card suit-hearts"><span class="card-rank">J</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
@@ -528,8 +556,8 @@
 <span class="preview-card suit-hearts"><span class="card-rank">K</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
 <span class="preview-card suit-clubs"><span class="card-rank">4</span><span class="card-suit card-suit-top">♣</span><span class="card-suit card-suit-bottom">♣</span></span>
 </div>
-<div class="label">The Video Poker Hall</div>
-<h3>Jacks or Better Trainer</h3>
+<h3>The Video Poker Hall</h3>
+<div class="label">Jacks or Better Trainer</div>
 <p>
               Master full-pay 9/6 Jacks or Better with optimal holds, session review,
               a complete decision ladder, and the El Jefe Challenge.
@@ -541,10 +569,8 @@
 <span class="feature">Decision Ladder</span>
 <span class="feature">Challenge</span>
 </div>
-<a class="enter" href="https://jliese916.github.io/JacksOrBetter/">
-<span>Enter Jacks or Better</span><span aria-hidden="true">→</span>
+<div class="room-enter"><span>Enter Video Poker Hall</span><span aria-hidden="true">→</span></div>
 </a>
-</article>
 </div>
 </div>
 </section>
