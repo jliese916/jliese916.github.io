@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="180 64 664 864" role="img" aria-label="J crest">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F5DE8C"/>
+      <stop offset=".50" stop-color="#C9A23A"/>
+      <stop offset="1" stop-color="#806016"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#174A35"/>
+      <stop offset="1" stop-color="#07100D"/>
+    </linearGradient>
+    <filter id="relief" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000" flood-opacity=".42"/>
+    </filter>
+  </defs>
+  <g filter="url(#relief)">
+    <path d="M512 184 C650 184 758 226 814 270 L786 612 C766 770 656 862 512 914 C368 862 258 770 238 612 L210 270 C266 226 374 184 512 184Z" fill="url(#shield)" stroke="url(#gold)" stroke-width="26"/>
+    <path d="M512 218 C625 218 715 248 768 283 L744 595 C729 718 642 796 512 847 C382 796 295 718 280 595 L256 283 C309 248 399 218 512 218Z" fill="none" stroke="#F3D77D" stroke-width="6" opacity=".72"/>
+    <path d="M316 222 L346 128 L430 192 L512 94 L594 192 L678 128 L708 222 Z" fill="url(#gold)" stroke="#F3D77D" stroke-width="8"/>
+    <circle cx="346" cy="128" r="18" fill="#F3D77D"/>
+    <circle cx="512" cy="94" r="20" fill="#F3D77D"/>
+    <circle cx="678" cy="128" r="18" fill="#F3D77D"/>
+    <path d="M346 304 C397 266 447 255 512 255 C577 255 627 266 678 304" fill="none" stroke="#C9A23A" stroke-width="8" opacity=".66"/>
+    <text x="496" y="652" text-anchor="middle" font-family="Georgia,Times New Roman,serif" font-size="476" font-weight="700" font-style="italic" fill="url(#gold)" stroke="#F3D77D" stroke-width="5" paint-order="stroke fill">J</text>
+    <path d="M454 766 H570" stroke="#C9A23A" stroke-width="7" stroke-linecap="round" opacity=".62"/>
+    <path d="M512 742 l16 16 -16 16 -16 -16 z" fill="#F3D77D"/>
+  </g>
+</svg>

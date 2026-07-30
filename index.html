@@ -503,13 +503,62 @@
     }
   
 
-    /* Casa crest mounted on the academy castle. */
-    .castle .keep{overflow:visible}
-    .castle-crest{
-      position:absolute;left:50%;top:14px;z-index:4;width:50px;height:50px;
-      transform:translateX(-50%);filter:drop-shadow(0 5px 8px rgba(0,0,0,.42));
+    /* Crest built into the keep as a recessed architectural medallion. */
+    .castle .keep { overflow: visible; }
+    .castle-crest-mount {
+      position: absolute;
+      left: 50%;
+      top: 4px;
+      z-index: 4;
+      width: 68px;
+      height: 61px;
+      transform: translateX(-50%);
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(216,181,100,.34);
+      border-radius: 34px 34px 12px 12px;
+      background:
+        radial-gradient(circle at 50% 32%, rgba(241,217,146,.13), transparent 46%),
+        linear-gradient(180deg, #1c4538 0%, #102d24 58%, #091b15 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.055),
+        inset 0 -7px 12px rgba(0,0,0,.26),
+        0 5px 8px rgba(0,0,0,.26);
     }
-    @media(max-width:640px){.castle-crest{top:17px;width:44px;height:44px}}
+    .castle-crest-mount::before {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border: 1px solid rgba(216,181,100,.18);
+      border-radius: 28px 28px 9px 9px;
+      pointer-events: none;
+    }
+    .castle-crest-mount::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -5px;
+      width: 18px;
+      height: 8px;
+      transform: translateX(-50%);
+      border: 1px solid rgba(216,181,100,.24);
+      border-top: 0;
+      border-radius: 0 0 8px 8px;
+      background: #0d281f;
+      box-shadow: 0 3px 5px rgba(0,0,0,.24);
+    }
+    .castle-crest {
+      position: relative;
+      z-index: 1;
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      opacity: .9;
+      filter:
+        saturate(.78)
+        brightness(.96)
+        drop-shadow(0 2px 2px rgba(0,0,0,.34));
+    }
 </style>
 </head>
 <body>
@@ -532,7 +581,7 @@
 <span class="flag-pole heart"><span class="flag heart"><span>♥</span></span></span>
 <div class="base"></div>
 <div class="tower left"><span class="window one"></span><span class="window two"></span></div>
-<div class="keep"><img alt="" aria-hidden="true" class="castle-crest" src="./jefe-crest.svg"/><span class="window one"></span><span class="window two"></span><span class="door"></span></div>
+<div class="keep"><span class="castle-crest-mount"><img alt="" aria-hidden="true" class="castle-crest" src="./jefe-castle-crest.svg"/></span><span class="window one"></span><span class="window two"></span><span class="door"></span></div>
 <div class="tower right"><span class="window one"></span><span class="window two"></span></div>
 </div>
 </div>
@@ -566,10 +615,10 @@
 </a>
 <a aria-label="Open Video Poker Hall" class="trainer-card" href="https://jliese916.github.io/JacksOrBetter/">
 <div aria-hidden="true" class="card-hand poker-hand">
-<span class="preview-card suit-hearts"><span class="card-rank">10</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
-<span class="preview-card suit-hearts"><span class="card-rank">J</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
-<span class="preview-card suit-hearts"><span class="card-rank">Q</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
-<span class="preview-card suit-hearts"><span class="card-rank">K</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
+<span class="preview-card suit-diamonds"><span class="card-rank">10</span><span class="card-suit card-suit-top">♦</span><span class="card-suit card-suit-bottom">♦</span></span>
+<span class="preview-card suit-diamonds"><span class="card-rank">J</span><span class="card-suit card-suit-top">♦</span><span class="card-suit card-suit-bottom">♦</span></span>
+<span class="preview-card suit-diamonds"><span class="card-rank">Q</span><span class="card-suit card-suit-top">♦</span><span class="card-suit card-suit-bottom">♦</span></span>
+<span class="preview-card suit-diamonds"><span class="card-rank">K</span><span class="card-suit card-suit-top">♦</span><span class="card-suit card-suit-bottom">♦</span></span>
 <span class="preview-card suit-clubs"><span class="card-rank">4</span><span class="card-suit card-suit-top">♣</span><span class="card-suit card-suit-bottom">♣</span></span>
 </div>
 <h3>The Video Poker Hall</h3>
@@ -597,13 +646,13 @@
 <div class="label">Let It Ride Trainer</div>
 <p>
               Practice both pull-or-ride decisions through complete hands, focused training,
-              exact lookups, bankroll review, and the El Jefe Challenge.
+              exact lookups, a complete strategy guide, and the El Jefe Challenge.
             </p>
 <div aria-label="Let It Ride trainer features" class="features">
 <span class="feature">Play</span>
 <span class="feature">Train</span>
 <span class="feature">Look Up</span>
-<span class="feature">Bankroll Review</span>
+<span class="feature">Complete Strategy Guide</span>
 <span class="feature">Challenge</span>
 </div>
 <div class="room-enter"><span>Enter Let It Ride Lounge</span><span aria-hidden="true">→</span></div>
