@@ -6,10 +6,10 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#0a1713" name="theme-color"/>
 <title>Casa del Jefe — Casino Training Academy</title>
-<meta content="Enter Casa del Jefe for Blackjack, Jacks or Better, and Let It Ride training, complete strategy references, and the El Jefe Challenges." name="description"/>
+<meta content="Enter Casa del Jefe for Blackjack, Jacks or Better, and Let It Ride training, with the Ultimate Hold'em Parlor coming soon." name="description"/>
 <meta content="website" property="og:type"/>
 <meta content="Casa del Jefe — Casino Training Academy" property="og:title"/>
-<meta content="Train. Master. Punish. Blackjack, Jacks or Better, and Let It Ride training at Casa del Jefe." property="og:description"/>
+<meta content="Train. Master. Punish. Blackjack, Jacks or Better, and Let It Ride at Casa del Jefe, with Ultimate Texas Hold'em coming soon." property="og:description"/>
 <meta content="https://jliese916.github.io/" property="og:url"/>
 <meta content="https://jliese916.github.io/og-casa-del-jefe.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
@@ -17,7 +17,7 @@
 <meta content="Casa del Jefe — Casino Training Academy crest" property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Casa del Jefe — Casino Training Academy" name="twitter:title"/>
-<meta content="Train. Master. Punish. Blackjack, Jacks or Better, and Let It Ride training at Casa del Jefe." name="twitter:description"/>
+<meta content="Train. Master. Punish. Blackjack, Jacks or Better, and Let It Ride at Casa del Jefe, with Ultimate Texas Hold'em coming soon." name="twitter:description"/>
 <meta content="https://jliese916.github.io/og-casa-del-jefe.png" name="twitter:image"/>
 <link href="./favicon-64.png" rel="icon" type="image/png"/>
 <link href="./apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -320,6 +320,10 @@
     .let-it-ride-hand .preview-card:nth-child(1) { transform: rotate(-7deg) translateY(5px); }
     .let-it-ride-hand .preview-card:nth-child(2) { transform: rotate(0deg); }
     .let-it-ride-hand .preview-card:nth-child(3) { transform: rotate(7deg) translateY(5px); }
+    .ultimate-hand .preview-card { margin-left: -12px; }
+    .ultimate-hand .preview-card:first-child { margin-left: 0; }
+    .ultimate-hand .preview-card:nth-child(1) { transform: rotate(-7deg) translateY(5px); }
+    .ultimate-hand .preview-card:nth-child(2) { transform: rotate(7deg) translateY(5px); }
 
 
     .academy {
@@ -342,7 +346,7 @@
 
     .trainer-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
     }
 
@@ -369,6 +373,16 @@
       transform: translateY(-6px);
       border-color: rgba(241,217,146,.62);
       box-shadow: 0 34px 90px rgba(0,0,0,.52);
+    }
+
+    .trainer-card.coming-soon {
+      cursor: default;
+      border-style: dashed;
+    }
+    .trainer-card.coming-soon:hover {
+      transform: none;
+      border-color: var(--line);
+      box-shadow: var(--shadow);
     }
 
     .trainer-card:focus-visible {
@@ -439,6 +453,13 @@
       transition: transform .2s ease;
     }
     .trainer-card:hover .room-enter span:last-child { transform: translateX(4px); }
+    .coming-soon .room-enter {
+      justify-content: flex-start;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .82rem;
+    }
 
 
 
@@ -452,11 +473,6 @@
 
     @media (max-width: 1040px) and (min-width: 761px) {
       .trainer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .trainer-card:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-        width: calc(50% - 12px);
-        justify-self: center;
-      }
     }
 
     @media (max-width: 760px) {
@@ -492,9 +508,11 @@
       .preview-card .card-suit { font-size: .9rem; }
       .blackjack-hand .preview-card { margin-left: -10px; }
       .let-it-ride-hand .preview-card { margin-left: -12px; }
+      .ultimate-hand .preview-card { margin-left: -10px; }
       .blackjack-hand .preview-card:first-child,
       .poker-hand .preview-card:first-child,
-      .let-it-ride-hand .preview-card:first-child { margin-left: 0; }
+      .let-it-ride-hand .preview-card:first-child,
+      .ultimate-hand .preview-card:first-child { margin-left: 0; }
 
     }
 
@@ -503,62 +521,13 @@
     }
   
 
-    /* Crest built into the keep as a recessed architectural medallion. */
-    .castle .keep { overflow: visible; }
-    .castle-crest-mount {
-      position: absolute;
-      left: 50%;
-      top: 4px;
-      z-index: 4;
-      width: 68px;
-      height: 61px;
-      transform: translateX(-50%);
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(216,181,100,.34);
-      border-radius: 34px 34px 12px 12px;
-      background:
-        radial-gradient(circle at 50% 32%, rgba(241,217,146,.13), transparent 46%),
-        linear-gradient(180deg, #1c4538 0%, #102d24 58%, #091b15 100%);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.055),
-        inset 0 -7px 12px rgba(0,0,0,.26),
-        0 5px 8px rgba(0,0,0,.26);
+    /* Casa crest mounted on the academy castle. */
+    .castle .keep{overflow:visible}
+    .castle-crest{
+      position:absolute;left:50%;top:14px;z-index:4;width:50px;height:50px;
+      transform:translateX(-50%);filter:drop-shadow(0 5px 8px rgba(0,0,0,.42));
     }
-    .castle-crest-mount::before {
-      content: "";
-      position: absolute;
-      inset: 5px;
-      border: 1px solid rgba(216,181,100,.18);
-      border-radius: 28px 28px 9px 9px;
-      pointer-events: none;
-    }
-    .castle-crest-mount::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -5px;
-      width: 18px;
-      height: 8px;
-      transform: translateX(-50%);
-      border: 1px solid rgba(216,181,100,.24);
-      border-top: 0;
-      border-radius: 0 0 8px 8px;
-      background: #0d281f;
-      box-shadow: 0 3px 5px rgba(0,0,0,.24);
-    }
-    .castle-crest {
-      position: relative;
-      z-index: 1;
-      width: 43px;
-      height: 43px;
-      border-radius: 50%;
-      opacity: .9;
-      filter:
-        saturate(.78)
-        brightness(.96)
-        drop-shadow(0 2px 2px rgba(0,0,0,.34));
-    }
+    @media(max-width:640px){.castle-crest{top:17px;width:44px;height:44px}}
 </style>
 </head>
 <body>
@@ -581,7 +550,7 @@
 <span class="flag-pole heart"><span class="flag heart"><span>♥</span></span></span>
 <div class="base"></div>
 <div class="tower left"><span class="window one"></span><span class="window two"></span></div>
-<div class="keep"><span class="castle-crest-mount"><img alt="" aria-hidden="true" class="castle-crest" src="./jefe-castle-crest.svg"/></span><span class="window one"></span><span class="window two"></span><span class="door"></span></div>
+<div class="keep"><img alt="" aria-hidden="true" class="castle-crest" src="./jefe-crest.svg"/><span class="window one"></span><span class="window two"></span><span class="door"></span></div>
 <div class="tower right"><span class="window one"></span><span class="window two"></span></div>
 </div>
 </div>
@@ -590,7 +559,7 @@
 <div class="shell">
 <div class="section-head">
 <h2>Choose Your Training Hall</h2>
-<p>Three game rooms are open. More rooms may be added as the academy grows.</p>
+<p>Three games are open. The Ultimate Hold’em Parlor is coming soon.</p>
 </div>
 <div class="trainer-grid">
 <a aria-label="Open Blackjack Salon" class="trainer-card" href="https://jliese916.github.io/BlackJackTrainer/">
@@ -615,10 +584,10 @@
 </a>
 <a aria-label="Open Video Poker Hall" class="trainer-card" href="https://jliese916.github.io/JacksOrBetter/">
 <div aria-hidden="true" class="card-hand poker-hand">
-<span class="preview-card suit-diamonds"><span class="card-rank">10</span><span class="card-suit card-suit-top">♦</span><span class="card-suit card-suit-bottom">♦</span></span>
-<span class="preview-card suit-diamonds"><span class="card-rank">J</span><span class="card-suit card-suit-top">♦</span><span class="card-suit card-suit-bottom">♦</span></span>
-<span class="preview-card suit-diamonds"><span class="card-rank">Q</span><span class="card-suit card-suit-top">♦</span><span class="card-suit card-suit-bottom">♦</span></span>
-<span class="preview-card suit-diamonds"><span class="card-rank">K</span><span class="card-suit card-suit-top">♦</span><span class="card-suit card-suit-bottom">♦</span></span>
+<span class="preview-card suit-hearts"><span class="card-rank">10</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
+<span class="preview-card suit-hearts"><span class="card-rank">J</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
+<span class="preview-card suit-hearts"><span class="card-rank">Q</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
+<span class="preview-card suit-hearts"><span class="card-rank">K</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
 <span class="preview-card suit-clubs"><span class="card-rank">4</span><span class="card-suit card-suit-top">♣</span><span class="card-suit card-suit-bottom">♣</span></span>
 </div>
 <h3>The Video Poker Hall</h3>
@@ -646,17 +615,37 @@
 <div class="label">Let It Ride Trainer</div>
 <p>
               Practice both pull-or-ride decisions through complete hands, focused training,
-              exact lookups, a complete strategy guide, and the El Jefe Challenge.
+              exact lookups, bankroll review, and the El Jefe Challenge.
             </p>
 <div aria-label="Let It Ride trainer features" class="features">
 <span class="feature">Play</span>
 <span class="feature">Train</span>
 <span class="feature">Look Up</span>
-<span class="feature">Complete Strategy Guide</span>
+<span class="feature">Bankroll Review</span>
 <span class="feature">Challenge</span>
 </div>
 <div class="room-enter"><span>Enter Let It Ride Lounge</span><span aria-hidden="true">→</span></div>
 </a>
+<article aria-label="The Ultimate Hold’em Parlor — coming soon" class="trainer-card coming-soon">
+<div aria-hidden="true" class="card-hand ultimate-hand">
+<span class="preview-card suit-clubs"><span class="card-rank">A</span><span class="card-suit card-suit-top">♣</span><span class="card-suit card-suit-bottom">♣</span></span>
+<span class="preview-card suit-spades"><span class="card-rank">A</span><span class="card-suit card-suit-top">♠</span><span class="card-suit card-suit-bottom">♠</span></span>
+</div>
+<h3>The Ultimate Hold’em Parlor</h3>
+<div class="label">Ultimate Texas Hold’em Trainer</div>
+<p>
+              A new room for mastering pre-flop raises, trips decisions, and river play is under construction.
+              The tables will open soon.
+            </p>
+<div aria-label="Planned Ultimate Texas Hold’em trainer features" class="features">
+<span class="feature">Play</span>
+<span class="feature">Train</span>
+<span class="feature">Look Up</span>
+<span class="feature">Optimal Strategy</span>
+<span class="feature">Challenge</span>
+</div>
+<div class="room-enter"><span>Coming Soon</span></div>
+</article>
 </div>
 </div>
 </section>
