@@ -6,10 +6,10 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#0a1713" name="theme-color"/>
 <title>Casa del Jefe — Casino Training Academy</title>
-<meta content="Enter Casa del Jefe for Blackjack and Jacks or Better training, complete strategy references, and the El Jefe Challenges." name="description"/>
+<meta content="Enter Casa del Jefe for Blackjack, Jacks or Better, and Let It Ride training, complete strategy references, and the El Jefe Challenges." name="description"/>
 <meta content="website" property="og:type"/>
 <meta content="Casa del Jefe — Casino Training Academy" property="og:title"/>
-<meta content="Train. Master. Punish. Blackjack and Jacks or Better training at Casa del Jefe." property="og:description"/>
+<meta content="Train. Master. Punish. Blackjack, Jacks or Better, and Let It Ride training at Casa del Jefe." property="og:description"/>
 <meta content="https://jliese916.github.io/" property="og:url"/>
 <meta content="https://jliese916.github.io/og-casa-del-jefe.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
@@ -17,7 +17,7 @@
 <meta content="Casa del Jefe — Casino Training Academy crest" property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Casa del Jefe — Casino Training Academy" name="twitter:title"/>
-<meta content="Train. Master. Punish. Blackjack and Jacks or Better training at Casa del Jefe." name="twitter:description"/>
+<meta content="Train. Master. Punish. Blackjack, Jacks or Better, and Let It Ride training at Casa del Jefe." name="twitter:description"/>
 <meta content="https://jliese916.github.io/og-casa-del-jefe.png" name="twitter:image"/>
 <link href="./favicon-64.png" rel="icon" type="image/png"/>
 <link href="./apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -315,6 +315,11 @@
     .preview-card:nth-child(5) { transform: rotate(9deg) translateY(6px); }
     .blackjack-hand .preview-card { margin-left: -12px; }
     .blackjack-hand .preview-card:first-child { margin-left: 0; }
+    .let-it-ride-hand .preview-card { margin-left: -14px; }
+    .let-it-ride-hand .preview-card:first-child { margin-left: 0; }
+    .let-it-ride-hand .preview-card:nth-child(1) { transform: rotate(-7deg) translateY(5px); }
+    .let-it-ride-hand .preview-card:nth-child(2) { transform: rotate(0deg); }
+    .let-it-ride-hand .preview-card:nth-child(3) { transform: rotate(7deg) translateY(5px); }
 
 
     .academy {
@@ -337,7 +342,7 @@
 
     .trainer-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
     }
 
@@ -445,6 +450,15 @@
       font-size: .9rem;
     }
 
+    @media (max-width: 1040px) and (min-width: 761px) {
+      .trainer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .trainer-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: calc(50% - 12px);
+        justify-self: center;
+      }
+    }
+
     @media (max-width: 760px) {
       .hero { min-height: auto; padding-top: 42px; }
       .trainer-grid { grid-template-columns: 1fr; }
@@ -477,8 +491,10 @@
       .preview-card .card-rank { font-size: 2.45rem; }
       .preview-card .card-suit { font-size: .9rem; }
       .blackjack-hand .preview-card { margin-left: -10px; }
+      .let-it-ride-hand .preview-card { margin-left: -12px; }
       .blackjack-hand .preview-card:first-child,
-      .poker-hand .preview-card:first-child { margin-left: 0; }
+      .poker-hand .preview-card:first-child,
+      .let-it-ride-hand .preview-card:first-child { margin-left: 0; }
 
     }
 
@@ -525,7 +541,7 @@
 <div class="shell">
 <div class="section-head">
 <h2>Choose Your Training Hall</h2>
-<p>Two games are open. More rooms may be added as the academy grows.</p>
+<p>Three games are open. More rooms may be added as the academy grows.</p>
 </div>
 <div class="trainer-grid">
 <a aria-label="Open Blackjack Salon" class="trainer-card" href="https://jliese916.github.io/BlackJackTrainer/">
@@ -570,6 +586,27 @@
 <span class="feature">Challenge</span>
 </div>
 <div class="room-enter"><span>Enter Video Poker Hall</span><span aria-hidden="true">→</span></div>
+</a>
+<a aria-label="Open Let It Ride Lounge" class="trainer-card" href="https://jliese916.github.io/LetItRide/">
+<div aria-hidden="true" class="card-hand let-it-ride-hand">
+<span class="preview-card suit-hearts"><span class="card-rank">9</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
+<span class="preview-card suit-hearts"><span class="card-rank">10</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
+<span class="preview-card suit-hearts"><span class="card-rank">Q</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
+</div>
+<h3>The Let It Ride Lounge</h3>
+<div class="label">Let It Ride Trainer</div>
+<p>
+              Practice both pull-or-ride decisions through complete hands, focused training,
+              exact lookups, bankroll review, and the El Jefe Challenge.
+            </p>
+<div aria-label="Let It Ride trainer features" class="features">
+<span class="feature">Play</span>
+<span class="feature">Train</span>
+<span class="feature">Look Up</span>
+<span class="feature">Bankroll Review</span>
+<span class="feature">Challenge</span>
+</div>
+<div class="room-enter"><span>Enter Let It Ride Lounge</span><span aria-hidden="true">→</span></div>
 </a>
 </div>
 </div>
