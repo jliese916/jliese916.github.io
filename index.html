@@ -5,19 +5,19 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#0a1713" name="theme-color"/>
-<title>Casa del Jefe — Casino Game Trainers</title>
-<meta content="Strategy trainers for casino table games and video poker. Train. Master. Punish. at Casa del Jefe." name="description"/>
+<title>Casa del Jefe — Casino Game Practice &amp; Strategy</title>
+<meta content="Casino game practice tools and strategy trainers for table games and video poker. Train. Master. Punish. at Casa del Jefe." name="description"/>
 <meta content="website" property="og:type"/>
-<meta content="Casa del Jefe — Casino Game Trainers" property="og:title"/>
-<meta content="Strategy trainers for casino table games and video poker. Train. Master. Punish." property="og:description"/>
+<meta content="Casa del Jefe — Casino Game Practice &amp; Strategy" property="og:title"/>
+<meta content="Casino game practice tools and strategy trainers for table games and video poker. Train. Master. Punish." property="og:description"/>
 <meta content="https://jliese916.github.io/" property="og:url"/>
 <meta content="https://jliese916.github.io/og-casa-del-jefe-games.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="Casa del Jefe — Casino Game Trainers" property="og:image:alt"/>
+<meta content="Casa del Jefe — Casino Game Practice &amp; Strategy" property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Casa del Jefe — Casino Game Trainers" name="twitter:title"/>
-<meta content="Strategy trainers for casino table games and video poker. Train. Master. Punish." name="twitter:description"/>
+<meta content="Casa del Jefe — Casino Game Practice &amp; Strategy" name="twitter:title"/>
+<meta content="Casino game practice tools and strategy trainers for table games and video poker. Train. Master. Punish." name="twitter:description"/>
 <meta content="https://jliese916.github.io/og-casa-del-jefe-games.png" name="twitter:image"/>
 <link href="./favicon-64.png" rel="icon" type="image/png"/>
 <link href="./apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -330,6 +330,75 @@
     .three-card-poker-hand .preview-card:nth-child(2) { transform: rotate(0deg); }
     .three-card-poker-hand .preview-card:nth-child(3) { transform: rotate(7deg) translateY(5px); }
 
+    .pai-gow-hand { padding-left: 0; justify-content: center; }
+    .pai-gow-hand .preview-card { margin-left: -32px; }
+    .pai-gow-hand .preview-card:first-child { margin-left: 0; }
+    .pai-gow-hand .preview-card:nth-child(1) { transform: rotate(-12deg) translateY(10px); }
+    .pai-gow-hand .preview-card:nth-child(2) { transform: rotate(-8deg) translateY(5px); }
+    .pai-gow-hand .preview-card:nth-child(3) { transform: rotate(-4deg) translateY(1px); }
+    .pai-gow-hand .preview-card:nth-child(4) { transform: rotate(0deg); }
+    .pai-gow-hand .preview-card:nth-child(5) { transform: rotate(4deg) translateY(1px); }
+    .pai-gow-hand .preview-card:nth-child(6) { transform: rotate(8deg) translateY(5px); }
+    .pai-gow-hand .preview-card:nth-child(7) { transform: rotate(12deg) translateY(10px); }
+    .preview-card.joker-preview {
+      border-color: #b8ab8b;
+      background: radial-gradient(circle at 50% 44%, #fff 0 34%, #f8f1df 72%, #e9dcc0 100%);
+      color: #050505;
+      box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 4px #c9a23a, 0 12px 24px rgba(0,0,0,.30);
+    }
+    .joker-preview .joker-word {
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      z-index: 3;
+      transform: translateX(-50%);
+      color: #7f1d1d;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: .49rem;
+      font-weight: 950;
+      letter-spacing: .08em;
+      line-height: 1;
+    }
+    .joker-preview .joker-star {
+      position: relative;
+      z-index: 2;
+      margin-top: 13px;
+      font-size: 2.35rem;
+      line-height: 1;
+      text-shadow: 0 1px 0 #fff, 0 3px 7px rgba(0,0,0,.18);
+    }
+    .joker-preview .joker-stripes {
+      position: absolute;
+      top: 56%;
+      z-index: 1;
+      display: grid;
+      gap: 4px;
+      width: 27px;
+      transform: translateY(-50%) rotate(-24deg);
+    }
+    .joker-preview .joker-stripes i {
+      display: block;
+      height: 4px;
+      border-radius: 99px;
+      opacity: .78;
+      box-shadow: 0 1px 2px rgba(0,0,0,.14);
+    }
+    .joker-preview .joker-stripes-left { left: -7px; }
+    .joker-preview .joker-stripes-right { right: -7px; }
+    .joker-preview .joker-stripes-left i:first-child { background: #b91c1c; }
+    .joker-preview .joker-stripes-left i:last-child { background: #15803d; }
+    .joker-preview .joker-stripes-right i:first-child { background: #1d4ed8; }
+    .joker-preview .joker-stripes-right i:last-child { background: #111827; }
+    .joker-preview .joker-corner {
+      position: absolute;
+      z-index: 3;
+      color: #050505;
+      font-size: .52rem;
+      line-height: 1;
+    }
+    .joker-preview .joker-corner-top { right: 6px; top: 6px; }
+    .joker-preview .joker-corner-bottom { left: 6px; bottom: 6px; transform: rotate(180deg); }
+
 
     .academy {
       padding: 28px 0 84px;
@@ -391,9 +460,6 @@
     }
 
     .trainer-card.partial-construction {
-      grid-column: 1 / -1;
-      width: calc((100% - 24px) / 2);
-      justify-self: center;
       border-style: dashed;
       border-color: rgba(241,217,146,.46);
     }
@@ -537,15 +603,15 @@
       .let-it-ride-hand .preview-card { margin-left: -12px; }
       .three-card-poker-hand .preview-card { margin-left: -12px; }
       .ultimate-hand .preview-card { margin-left: -10px; }
-      .trainer-card.partial-construction {
-        grid-column: auto;
-        width: 100%;
-      }
+      .pai-gow-hand .preview-card { margin-left: -34px; }
+      .joker-preview .joker-word { font-size: .44rem; }
+      .joker-preview .joker-star { font-size: 2.1rem; }
       .blackjack-hand .preview-card:first-child,
       .poker-hand .preview-card:first-child,
       .let-it-ride-hand .preview-card:first-child,
       .three-card-poker-hand .preview-card:first-child,
-      .ultimate-hand .preview-card:first-child { margin-left: 0; }
+      .ultimate-hand .preview-card:first-child,
+      .pai-gow-hand .preview-card:first-child { margin-left: 0; }
 
     }
 
@@ -570,10 +636,10 @@
 <div class="crest"><img alt="Casa del Jefe crest" src="./jefe-crest.svg"/></div>
 <div class="eyebrow">Welcome to</div>
 <h1>Casa del Jefe</h1>
-<div class="subtitle">Casino Game Trainers</div>
+<div class="subtitle">Casino Game Practice &amp; Strategy</div>
 <p class="intro">
-          Sharpen your decisions and train until the right play becomes automatic.
-          Choose a casino game below to begin.
+          Sharpen your decisions, practice complete hands, and master the games that reward precision.
+          Choose a room below to begin.
         </p>
 <div class="motto">Train. Master. Punish.</div>
 <div aria-hidden="true" class="castle">
@@ -591,8 +657,8 @@
 <section class="academy">
 <div class="shell">
 <div class="section-head">
-<h2>Choose Your Training Room</h2>
-<p>Four rooms are fully open. The Ultimate Hold’em Parlor is open while construction continues.</p>
+<h2>Choose Your Game Room</h2>
+<p>Five rooms are fully open. The Ultimate Hold’em Parlor is open while construction continues.</p>
 </div>
 <div class="trainer-grid">
 <a aria-label="Open Blackjack Salon" class="trainer-card" href="https://jliese916.github.io/BlackJackTrainer/">
@@ -692,6 +758,31 @@
 </div>
 <div class="room-enter"><span>Enter Three Card Poker Club</span><span aria-hidden="true">→</span></div>
 </a>
+<a aria-label="Open Pai Gow Practice Pit" class="trainer-card" href="https://jliese916.github.io/FaceUpPaiGow">
+<div aria-hidden="true" class="card-hand pai-gow-hand" id="paiGowPreviewHand">
+<span class="preview-card suit-clubs"><span class="card-rank">8</span><span class="card-suit card-suit-top">♣</span><span class="card-suit card-suit-bottom">♣</span></span>
+<span class="preview-card suit-hearts"><span class="card-rank">K</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
+<span class="preview-card joker-preview"><span class="joker-corner joker-corner-top">★</span><span class="joker-word">JOKER</span><span class="joker-stripes joker-stripes-left"><i></i><i></i></span><span class="joker-star">★</span><span class="joker-stripes joker-stripes-right"><i></i><i></i></span><span class="joker-corner joker-corner-bottom">★</span></span>
+<span class="preview-card suit-spades"><span class="card-rank">3</span><span class="card-suit card-suit-top">♠</span><span class="card-suit card-suit-bottom">♠</span></span>
+<span class="preview-card suit-diamonds"><span class="card-rank">A</span><span class="card-suit card-suit-top">♦</span><span class="card-suit card-suit-bottom">♦</span></span>
+<span class="preview-card suit-clubs"><span class="card-rank">Q</span><span class="card-suit card-suit-top">♣</span><span class="card-suit card-suit-bottom">♣</span></span>
+<span class="preview-card suit-hearts"><span class="card-rank">6</span><span class="card-suit card-suit-top">♥</span><span class="card-suit card-suit-bottom">♥</span></span>
+</div>
+<h3>The Pai Gow Practice Pit</h3>
+<div class="label">Face Up Pai Gow Practice</div>
+<p>
+              Practice setting seven-card Face Up Pai Gow hands against a visible dealer hand.
+              Play complete deals, work through beatable hands, look up any layout, and compare your bankroll with optimal play.
+            </p>
+<div aria-label="Face Up Pai Gow practice features" class="features">
+<span class="feature">Play</span>
+<span class="feature">Practice</span>
+<span class="feature">Look Up</span>
+<span class="feature">House Way</span>
+<span class="feature">Bankroll Review</span>
+</div>
+<div class="room-enter"><span>Enter Pai Gow Practice Pit</span><span aria-hidden="true">→</span></div>
+</a>
 <a aria-label="Open Ultimate Hold’em Parlor — partially under construction" class="trainer-card partial-construction" href="https://jliese916.github.io/UltimateTexasHoldEm/">
 <div aria-hidden="true" class="card-hand ultimate-hand">
 <span class="preview-card suit-clubs"><span class="card-rank">A</span><span class="card-suit card-suit-top">♣</span><span class="card-suit card-suit-bottom">♣</span></span>
@@ -718,5 +809,48 @@
 <footer>
     Casa del Jefe · Built to punish the greedy casinos.
   </footer>
+<script>
+  (() => {
+    const hand = document.getElementById("paiGowPreviewHand");
+    if (!hand) return;
+
+    const suits = [
+      { symbol: "♠", className: "suit-spades" },
+      { symbol: "♥", className: "suit-hearts" },
+      { symbol: "♦", className: "suit-diamonds" },
+      { symbol: "♣", className: "suit-clubs" }
+    ];
+    const ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+    const deck = [];
+    for (const suit of suits) {
+      for (const rank of ranks) deck.push({ rank, ...suit });
+    }
+
+    for (let i = deck.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+
+    const cards = deck.slice(0, 6).map(card => ({ type: "standard", ...card }));
+    cards.push({ type: "joker" });
+    for (let i = cards.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+
+    hand.replaceChildren();
+    for (const card of cards) {
+      const node = document.createElement("span");
+      if (card.type === "joker") {
+        node.className = "preview-card joker-preview";
+        node.innerHTML = '<span class="joker-corner joker-corner-top">★</span><span class="joker-word">JOKER</span><span class="joker-stripes joker-stripes-left"><i></i><i></i></span><span class="joker-star">★</span><span class="joker-stripes joker-stripes-right"><i></i><i></i></span><span class="joker-corner joker-corner-bottom">★</span>';
+      } else {
+        node.className = `preview-card ${card.className}`;
+        node.innerHTML = `<span class="card-rank">${card.rank}</span><span class="card-suit card-suit-top">${card.symbol}</span><span class="card-suit card-suit-bottom">${card.symbol}</span>`;
+      }
+      hand.appendChild(node);
+    }
+  })();
+</script>
 </body>
 </html>
